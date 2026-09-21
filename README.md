@@ -4,13 +4,7 @@
  ## SET-UP: 
 
  
-Navigate to your Downloads folder `cd C:\Users\YOURUSERNAME\Downloads`
-
-Enter the extracted project folder (the name may vary depending on GitHub archive): `cd .\Windows-11-24H2-BSOD\Windows-11-24H2-BSOD\`
-
-Allow script execution for this session (**required for unsigned scripts**) `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass`
-
-Run the script `.\BugCheck-Mockup.ps1`
+All you need to do is paste the script into a text file, change the extension from .txt to .ps1, then right-click the file and select Run with PowerShell.
 
  > Press Escape at any time to close the simulation, it will **terminate the process and clean up everything**.
 
