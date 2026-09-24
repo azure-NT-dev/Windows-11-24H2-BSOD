@@ -112,9 +112,14 @@ $stopCodes = @(
     @{ Code = "VIDEO_SCHEDULER_INTERNAL_ERROR (0x119)"; Failed = "dxgmms2.sys" },
     @{ Code = "ATTEMPTED_EXECUTE_OF_NOEXECUTE_MEMORY (0xFC)"; Failed = "ntoskrnl.exe" }
 )
-$errorChoice = $stopCodes | Get-Random
-$StopCode = $errorChoice.Code
-$WhatFailed = $errorChoice.Failed
+
+if (-not $StopCode) {
+    $errorChoice = $stopCodes | Get-Random
+    $StopCode = $errorChoice.Code
+    if (-not $PSBoundParameters.ContainsKey('WhatFailed')) {
+        $WhatFailed = $errorChoice.Failed
+    }
+}
 
 $form = [System.Windows.Forms.Form]::new()
 $form.BackColor = [System.Drawing.Color]::Black
